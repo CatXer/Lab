@@ -8,7 +8,7 @@ public class Lab1 {
 		double a, b, c, x;
 		// input data//
 		Scanner inp = new Scanner(System.in);
-		System.out.println("Введите данные: ");
+		System.out.println("Р’РІРµРґРёС‚Рµ РґР°РЅРЅС‹Рµ: ");
 		System.out.print("a = ");
 		a = inp.nextDouble();
 		System.out.print("b = ");
