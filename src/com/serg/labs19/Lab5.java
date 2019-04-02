@@ -10,9 +10,9 @@ public class Lab5 {
 		int count_x;
 		// input//
 		while (true) {
-			System.out.print("Ââåäèòå íèæíþþ ãðàíèöó: ");
+			System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¸Ð¶Ð½ÑŽÑŽ Ð³Ñ€Ð°Ð½Ð¸Ñ†Ñƒ: ");
 			start = in.nextDouble();
-			System.out.print("Ââåäèòå âåðõíþþ ãðàíèöó: ");
+			System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð²ÐµÑ€Ñ…Ð½ÑŽÑŽ Ð³Ñ€Ð°Ð½Ð¸Ñ†Ñƒ: ");
 			end = in.nextDouble();
 			// check input errors//
 			if (start == end) {
@@ -23,7 +23,7 @@ public class Lab5 {
 				start = end - start;
 				end -= start;
 			}
-			System.out.print("Ââåäèòå êîëè÷åñòâî òî÷åê N = ");
+			System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ñ‡ÐµÐº N = ");
 			count_x = Math.abs(in.nextInt());
 			// end input//
 			step = (end - start) / (count_x - 1);
@@ -32,7 +32,7 @@ public class Lab5 {
 		}
 		// calculate the tabulating function//
 		if (count_x != 0) {
-			System.out.println("[" + count_x + "] çíà÷åíèé f(x) íà [" + start + " : " + end + "] ->");
+			System.out.println("[" + count_x + "] Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ð¹ f(x) Ð½Ð° [" + start + " : " + end + "] ->");
 			xMax = x = start;
 			yMax = 3 * x + 2 * Math.sin(x) + 1;
 			for (int i = 0; i < count_x; i++) {
@@ -46,10 +46,10 @@ public class Lab5 {
 				}
 				x += step;
 			}
-			System.out.print("\n" + "Ìàêñèìàëüíîå çíà÷åíèå f(x) = " + String.format("%.4f", yMax) + " ïðè x = "
+			System.out.print("\n" + "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ f(x) = " + String.format("%.4f", yMax) + " Ð¿Ñ€Ð¸ x = "
 					+ String.format("%.2f", xMax));
 		} else
-			System.out.println("Âû óêàçàëè êîëè÷åñòâî òî÷åê = 0, íåò âûáîðà.");
+			System.out.println("Ð’Ñ‹ ÑƒÐºÐ°Ð·Ð°Ð»Ð¸ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ Ñ‚Ð¾Ñ‡ÐµÐº = 0, Ð½ÐµÑ‚ Ð²Ñ‹Ð±Ð¾Ñ€Ð°.");
 
 	}
 }

@@ -5,22 +5,22 @@ import java.util.Scanner;
 
 public class Lab6_2 {
 	public static void main(String[] args) {
-		// инициализация//
+		// РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ//
 		Scanner in = new Scanner(System.in);
 		int countOdd = 0, newL = 0, length = 0;
 		double Yn[], rangeDown, rangeUp, Mid = 0;
-		// ввод//
-		System.out.print("Введите длинну массива: ");
+		// РІРІРѕРґ//
+		System.out.print("Р’РІРµРґРёС‚Рµ РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°: ");
 		length = Math.abs(in.nextInt());
 		if (length == 0) {
-			System.out.println("Ошибка: вы ввели нулевую длинну.");
+			System.out.println("РћС€РёР±РєР°: РІС‹ РІРІРµР»Рё РЅСѓР»РµРІСѓСЋ РґР»РёРЅРЅСѓ.");
 			in.close();
 			return;
 		}
 		Yn = new double[length];
-		System.out.println("Запишите массив из " + length + " элементов:");
+		System.out.println("Р—Р°РїРёС€РёС‚Рµ РјР°СЃСЃРёРІ РёР· " + length + " СЌР»РµРјРµРЅС‚РѕРІ:");
 		for (int i = 0; i < length; i++) {
-			System.out.print("Введите X" + (i + 1) + ":");
+			System.out.print("Р’РІРµРґРёС‚Рµ X" + (i + 1) + ":");
 			Yn[i] = in.nextDouble();
 			if (Yn[i] % 2 != 0) {
 				Mid += Yn[i];
@@ -28,21 +28,21 @@ public class Lab6_2 {
 			}
 		}
 		Mid /= countOdd;
-		System.out.print("Введите нижнуюю границу диапозона: ");
+		System.out.print("Р’РІРµРґРёС‚Рµ РЅРёР¶РЅСѓСЋСЋ РіСЂР°РЅРёС†Сѓ РґРёР°РїРѕР·РѕРЅР°: ");
 		rangeDown = in.nextDouble();
-		System.out.print("Введите верхнюю границу диапозона: ");
+		System.out.print("Р’РІРµРґРёС‚Рµ РІРµСЂС…РЅСЋСЋ РіСЂР°РЅРёС†Сѓ РґРёР°РїРѕР·РѕРЅР°: ");
 		rangeUp = in.nextDouble();
 		if (rangeUp < rangeDown) {
 			rangeUp += rangeDown;
 			rangeDown = rangeUp - rangeDown;
 			rangeUp -= rangeDown;
 		}
-		System.out.println("Вы ввели массив: " + Arrays.toString(Yn) + ";\nВы ввели диапозон: [" + rangeDown + ":"
+		System.out.println("Р’С‹ РІРІРµР»Рё РјР°СЃСЃРёРІ: " + Arrays.toString(Yn) + ";\nР’С‹ РІРІРµР»Рё РґРёР°РїРѕР·РѕРЅ: [" + rangeDown + ":"
 				+ rangeUp + "];");
 
 		in.close();
-		System.out.println("Среднее арифметическое нечётных элементов = " + Mid);
-		// Удаление элементов с дробной частью//
+		System.out.println("РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ РЅРµС‡С‘С‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ = " + Mid);
+		// РЈРґР°Р»РµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ СЃ РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚СЊСЋ//
 		int j = 0;
 		for (int i = 0; i < Yn.length; i++) {
 			double n = Yn[i];
@@ -51,9 +51,9 @@ public class Lab6_2 {
 			newL++;
 			Yn[j++] = n >= rangeDown && n <= rangeUp ? Mid : n;
 		}
-		// вывод ответа//
-		System.out.println("В результате было удалено [" + (Yn.length - newL)
-				+ "] элементов с дробной частью и массив принял вид:");
+		// РІС‹РІРѕРґ РѕС‚РІРµС‚Р°//
+		System.out.println("Р’ СЂРµР·СѓР»СЊС‚Р°С‚Рµ Р±С‹Р»Рѕ СѓРґР°Р»РµРЅРѕ [" + (Yn.length - newL)
+				+ "] СЌР»РµРјРµРЅС‚РѕРІ СЃ РґСЂРѕР±РЅРѕР№ С‡Р°СЃС‚СЊСЋ Рё РјР°СЃСЃРёРІ РїСЂРёРЅСЏР» РІРёРґ:");
 		System.out.print(Arrays.toString(Yn));
 	}
 }

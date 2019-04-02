@@ -10,12 +10,12 @@ public class Lab4 {
 		int n;
 		Scanner in = new Scanner(System.in);
 		// input//
-		System.out.print("Ââåäèòå òî÷íîñòü (0 - 100) %: ");
+		System.out.print("Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ñ‚Ğ¾Ñ‡Ğ½Ğ¾ÑÑ‚ÑŒ (0 - 100) %: ");
 		count = in.nextDouble();
 		if (count >= 0 && count <= 100)
 			count = count / 100 * 20 + 1;
 		else {
-			System.out.println("Îøèáêà ïğè ââîäå òî÷íîñòè.");
+			System.out.println("ĞÑˆĞ¸Ğ±ĞºĞ° Ğ¿Ñ€Ğ¸ Ğ²Ğ²Ğ¾Ğ´Ğµ Ñ‚Ğ¾Ñ‡Ğ½Ğ¾ÑÑ‚Ğ¸.");
 			in.close();
 			return;
 		}
@@ -30,9 +30,9 @@ public class Lab4 {
 		// difference calculation//
 		df = f_x - sum;
 		// print results//
-		System.out.println("Ïîñëåäíèé øàã = " + (n - 1));
-		System.out.println("Ğåêóğåíòíàÿ ñóììà = " + sum);
+		System.out.println("ĞŸĞ¾ÑĞ»ĞµĞ´Ğ½Ğ¸Ğ¹ ÑˆĞ°Ğ³ = " + (n - 1));
+		System.out.println("Ğ ĞµĞºÑƒÑ€ĞµĞ½Ñ‚Ğ½Ğ°Ñ ÑÑƒĞ¼Ğ¼Ğ° = " + sum);
 		System.out.println("F(x) = " + f_x);
-		System.out.println("Ğàçíèöà = " + df);
+		System.out.println("Ğ Ğ°Ğ·Ğ½Ğ¸Ñ†Ğ° = " + df);
 	}
 }

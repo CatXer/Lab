@@ -9,11 +9,11 @@ public class Lab3_1a {
 		int M, N;
 		double a, result, p = 1, s1 = 0, s2 = 0;
 		// input//
-		System.out.print("Ââåäèòå ïðåäåë -> M = ");
+		System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ñ€ÐµÐ´ÐµÐ» -> M: ");
 		M = in.nextInt();
-		System.out.print("Ââåäèòå ïðåäåë -> N = ");
+		System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ñ€ÐµÐ´ÐµÐ» -> N: ");
 		N = in.nextInt();
-		System.out.print("Ââåäèòå ïàðàìåòð -> a = ");
+		System.out.print("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¿Ð°Ñ€Ð°Ð¼ÐµÑ‚Ñ€ -> a:");
 		a = in.nextDouble();
 		in.close();
 		// use <for operator> for calculate p & s1 & s2//

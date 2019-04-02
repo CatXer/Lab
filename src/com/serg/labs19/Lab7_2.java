@@ -9,26 +9,26 @@ public class Lab7_2 {
 		double matrix[][], array[] = new double[3];
 		double max, min, mid = 0;
 		int rows, columns;
-		
-		System.out.print("Введите число строк [n]: ");
+
+		System.out.print("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЃС‚СЂРѕРє [n]: ");
 		rows = in.nextInt();
-		System.out.print("Введите число столбцов [m]: ");
+		System.out.print("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЃС‚РѕР»Р±С†РѕРІ [m]: ");
 		columns = in.nextInt();
 		if (columns == 0 || rows == 0) {
-			System.out.println("Ошибка: пустая матрица");
+			System.out.println("РћС€РёР±РєР°: РїСѓСЃС‚Р°СЏ РјР°С‚СЂРёС†Р°");
 			in.close();
 			System.exit(1);
 		}
-		// ввод матрицы//
+		// РІРІРѕРґ РјР°С‚СЂРёС†С‹//
 		matrix = new double[rows][columns];
 		for (int n = 0; n < rows; n++)
 			for (int m = 0; m < columns; m++) {
-				System.out.print("Элемент X[" + (n + 1) + "," + (m + 1) + "]= ");
+				System.out.print("Р­Р»РµРјРµРЅС‚ X[" + (n + 1) + "," + (m + 1) + "]= ");
 				matrix[n][m] = in.nextDouble();
 			}
 		in.close();
-		// Вывод матрицы //Поиск чётных произведений элементов строк// //
-		System.out.println("Вы ввели следующую матрицу :");
+		// Р’С‹РІРѕРґ РјР°С‚СЂРёС†С‹ //РџРѕРёСЃРє С‡С‘С‚РЅС‹С… РїСЂРѕРёР·РІРµРґРµРЅРёР№ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂРѕРє// //
+		System.out.println("Р’С‹ РІРІРµР»Рё СЃР»РµРґСѓСЋС‰СѓСЋ РјР°С‚СЂРёС†Сѓ :");
 		min = max = matrix[0][0];
 		for (int row = 0; row < rows; row++) {
 			System.out.print("| ");
@@ -45,9 +45,9 @@ public class Lab7_2 {
 		array[0] = min;
 		array[1] = max;
 		array[2] = mid / (rows * columns);
-		System.out.println("В резултате работы алгоритма у матрицы были выявленны следующие характеристики:");
-		System.out.println("Минимальный элемент матрицы = " + array[0]);
-		System.out.println("Максимальный элемент матрицы = " + array[1]);
-		System.out.println("Среднее арифметическое элементов матрицы = " + array[2]);
+		System.out.println("Р’ СЂРµР·СѓР»С‚Р°С‚Рµ СЂР°Р±РѕС‚С‹ Р°Р»РіРѕСЂРёС‚РјР° Сѓ РјР°С‚СЂРёС†С‹ Р±С‹Р»Рё РІС‹СЏРІР»РµРЅРЅС‹ СЃР»РµРґСѓСЋС‰РёРµ С…Р°СЂР°РєС‚РµСЂРёСЃС‚РёРєРё:");
+		System.out.println("РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°С‚СЂРёС†С‹ = " + array[0]);
+		System.out.println("РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЌР»РµРјРµРЅС‚ РјР°С‚СЂРёС†С‹ = " + array[1]);
+		System.out.println("РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°С‚СЂРёС†С‹ = " + array[2]);
 	}
 }

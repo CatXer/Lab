@@ -10,23 +10,23 @@ public class Lab6_3 {
 		int zero_count = 0, length, j = 0;
 		double[] Xk, Zm;
 
-		// ввод//
-		System.out.print("Введите длинну массива: ");
+		// РІРІРѕРґ//
+		System.out.print("Р’РІРµРґРёС‚Рµ РґР»РёРЅРЅСѓ РјР°СЃСЃРёРІР°: ");
 		length = Math.abs(in.nextInt());
 		Zm = new double[length];
-		System.out.println("Запишите массив из " + length + " элементов:");
+		System.out.println("Р—Р°РїРёС€РёС‚Рµ РјР°СЃСЃРёРІ РёР· " + length + " СЌР»РµРјРµРЅС‚РѕРІ:");
 
 		for (int i = 0; i < length; i++) {
-			System.out.print("Введите X" + (i + 1) + ":");
+			System.out.print("Р’РІРµРґРёС‚Рµ X" + (i + 1) + ":");
 			Zm[i] = in.nextDouble();
 			if (Zm[i] == 0)
 				zero_count++;
 		}
 
-		System.out.println("Вы ввели массив: " + Arrays.toString(Zm));
+		System.out.println("Р’С‹ РІРІРµР»Рё РјР°СЃСЃРёРІ: " + Arrays.toString(Zm));
 		in.close();
 
-		// Заполнение массива Xk//
+		// Р—Р°РїРѕР»РЅРµРЅРёРµ РјР°СЃСЃРёРІР° Xk//
 		Xk = new double[length - zero_count];
 
 		for (int i = 0; j < Xk.length && i < Zm.length; i += 2) {
@@ -42,7 +42,7 @@ public class Lab6_3 {
 			Xk[j++] = x;
 		}
 
-		// Сортировка Шелла//
+		// РЎРѕСЂС‚РёСЂРѕРІРєР° РЁРµР»Р»Р°//
 		for (int gap = Zm.length / 2; gap > 0; gap /= 2) {
 			// Do a gaped insertion sort for this gap size.
 			// The first gap elements a[0..gap-1] are already in gaped order
@@ -61,10 +61,10 @@ public class Lab6_3 {
 			}
 		}
 
-		// Вывод результатов//
+		// Р’С‹РІРѕРґ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ//
 
 		System.out.println(
-				"Был получен новый массив сначала из чётных, а потом нечётных индексов: \n" + Arrays.toString(Xk));
-		System.out.println("Старый массив был отсортирован по убыванию: \n" + Arrays.toString(Zm));
+				"Р‘С‹Р» РїРѕР»СѓС‡РµРЅ РЅРѕРІС‹Р№ РјР°СЃСЃРёРІ СЃРЅР°С‡Р°Р»Р° РёР· С‡С‘С‚РЅС‹С…, Р° РїРѕС‚РѕРј РЅРµС‡С‘С‚РЅС‹С… РёРЅРґРµРєСЃРѕРІ: \n" + Arrays.toString(Xk));
+		System.out.println("РЎС‚Р°СЂС‹Р№ РјР°СЃСЃРёРІ Р±С‹Р» РѕС‚СЃРѕСЂС‚РёСЂРѕРІР°РЅ РїРѕ СѓР±С‹РІР°РЅРёСЋ: \n" + Arrays.toString(Zm));
 	}
 }

@@ -7,7 +7,7 @@ public class Lab2_1b {
 	public static void main(String... args) {
 		// initial & input//
 		Scanner in = new Scanner(System.in);
-		System.out.print("Введите a: ");
+		System.out.print("Р’РІРµРґРёС‚Рµ a: ");
 		double y = 0, a = in.nextDouble();
 		in.close();
 		// check statement - switch(case)//

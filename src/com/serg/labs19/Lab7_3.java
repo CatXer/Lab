@@ -11,33 +11,33 @@ public class Lab7_3 {
 		int n;
 		double sumEven = 0;
 		// input//
-		System.out.print("Введите число строк и столбцов [n] для матрицы [n x n]:");
+		System.out.print("Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ СЃС‚СЂРѕРє Рё СЃС‚РѕР»Р±С†РѕРІ [n] РґР»СЏ РјР°С‚СЂРёС†С‹ [n x n]:");
 		n = in.nextInt();
 		if (n == 0) {
-			System.out.println("Ошибка: пустая матрица");
+			System.out.println("РћС€РёР±РєР°: РїСѓСЃС‚Р°СЏ РјР°С‚СЂРёС†Р°");
 			in.close();
 			System.exit(1);
 		}
-		// ввод матрицы//
+		// РІРІРѕРґ РјР°С‚СЂРёС†С‹//
 		matrix = new double[n][n];
 
 		for (int row = 0; row < n; row++)
 			for (int m = 0; m < n; m++) {
-				System.out.print("Элемент X[" + (row + 1) + "," + (m + 1) + "]= ");
+				System.out.print("Р­Р»РµРјРµРЅС‚ X[" + (row + 1) + "," + (m + 1) + "]= ");
 				matrix[row][m] = in.nextDouble();
 				if (row % 2 != 0 && m % 2 != 0)
 					sumEven += matrix[row][m];
 			}
 		in.close();
-		// Вывод матрицы //Поиск чётных произведений элементов строк// //
-		System.out.println("Вы ввели следующую матрицу :");
+		// Р’С‹РІРѕРґ РјР°С‚СЂРёС†С‹ //РџРѕРёСЃРє С‡С‘С‚РЅС‹С… РїСЂРѕРёР·РІРµРґРµРЅРёР№ СЌР»РµРјРµРЅС‚РѕРІ СЃС‚СЂРѕРє// //
+		System.out.println("Р’С‹ РІРІРµР»Рё СЃР»РµРґСѓСЋС‰СѓСЋ РјР°С‚СЂРёС†Сѓ :");
 		for (int row = 0; row < n; row++) {
 			System.out.print("| ");
 			for (double el : matrix[row])
 				System.out.printf("%10.6f  ", el);
 			System.out.println(" |");
 		}
-		System.out.println("Новая матрица :");
+		System.out.println("РќРѕРІР°СЏ РјР°С‚СЂРёС†Р° :");
 		// replacing upper triangle elements on sum//
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = 0; j < matrix.length; j++)
