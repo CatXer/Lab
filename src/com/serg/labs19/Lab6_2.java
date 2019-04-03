@@ -7,23 +7,23 @@ public class Lab6_2 {
 	public static void main(String[] args) {
 		// инициализация//
 		Scanner in = new Scanner(System.in);
-		int countOdd = 0, newL = 0, length = 0;
-		double Yn[], rangeDown, rangeUp, Mid = 0;
+		int countOdd = 0, newL = 0, n = 0;
+		double Y[], rangeDown, rangeUp, Mid = 0;
 		// ввод//
 		System.out.print("Введите длинну массива: ");
-		length = Math.abs(in.nextInt());
-		if (length == 0) {
+		n = Math.abs(in.nextInt());
+		if (n == 0) {
 			System.out.println("Ошибка: вы ввели нулевую длинну.");
 			in.close();
 			return;
 		}
-		Yn = new double[length];
-		System.out.println("Запишите массив из " + length + " элементов:");
-		for (int i = 0; i < length; i++) {
+		Y = new double[n];
+		System.out.println("Запишите массив из " + n + " элементов:");
+		for (int i = 0; i < n; i++) {
 			System.out.print("Введите X" + (i + 1) + ":");
-			Yn[i] = in.nextDouble();
-			if (Yn[i] % 2 != 0) {
-				Mid += Yn[i];
+			Y[i] = in.nextDouble();
+			if (Y[i] % 2 != 0) {
+				Mid += Y[i];
 				countOdd++;
 			}
 		}
@@ -37,23 +37,26 @@ public class Lab6_2 {
 			rangeDown = rangeUp - rangeDown;
 			rangeUp -= rangeDown;
 		}
-		System.out.println("Вы ввели массив: " + Arrays.toString(Yn) + ";\nВы ввели диапозон: [" + rangeDown + ":"
+		System.out.println("Вы ввели массив: " + Arrays.toString(Y) + ";\nВы ввели диапозон: [" + rangeDown + ":"
 				+ rangeUp + "];");
 
 		in.close();
 		System.out.println("Среднее арифметическое нечётных элементов = " + Mid);
 		// Удаление элементов с дробной частью//
 		int j = 0;
-		for (int i = 0; i < Yn.length; i++) {
-			double n = Yn[i];
-			if (n % 1 != 0)
+		for (int i = 0; i < Y.length; i++) {
+			double el = Y[i];
+			if (el % 1 != 0)
 				continue;
 			newL++;
-			Yn[j++] = n >= rangeDown && n <= rangeUp ? Mid : n;
+			Y[j++] = el >= rangeDown && el <= rangeUp ? Mid : el;
 		}
 		// вывод ответа//
-		System.out.println("В результате было удалено [" + (Yn.length - newL)
-				+ "] элементов с дробной частью и массив принял вид:");
-		System.out.print(Arrays.toString(Yn));
+		System.out.print("В результате было удалено [" + (Y.length - newL)
+				+ "] элементов с дробной частью и массив принял вид:\n[");
+		for(int i = 0; i < newL-1; i++) 
+			System.out.print(Y[i]+", ");
+		System.out.print(Y[newL-1]+"]");
+		
 	}
 }
