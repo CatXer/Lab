@@ -40,10 +40,10 @@ public class Lab7_3 {
 		System.out.println("Новая матрица :");
 		// replacing upper triangle elements on sum//
 		for (int i = 0; i < matrix.length; i++) {
-			for (int j = 0; j < matrix.length; j++)
-				if (j > i)
+			for (int j = i + 1; j < matrix.length; j++)
 					matrix[i][j] = sumEven;
-			System.out.println(Arrays.toString(matrix[i]));
 		}
+		for(double [] c: matrix) 
+			System.out.println(Arrays.toString(c));
 	}
 }
