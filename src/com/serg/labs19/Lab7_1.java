@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class Lab7_1 {
 	public static void main(String[] args) {
-		// �������������//
 		Scanner in = new Scanner(System.in);
 		int columns, rows;
 		double multyple;
 
 		System.out.print("Введите число строк [n]: ");
 		rows = Math.abs(in.nextInt());
-		System.out.print("Введите число строк [m]: ");
+		System.out.print("Введите число столбцов [m]: ");
 		columns = Math.abs(in.nextInt());
 		if (columns == 0 || rows == 0) {
 			System.out.println("Ошибка: пустая матрица");

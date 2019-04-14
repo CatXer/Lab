@@ -8,9 +8,9 @@ public class Lab8_2 {
 		String startStr, word = "";
 		StringBuilder result = new StringBuilder();
 		int k, pos = 0;
-		System.out.println("Enter any stroke ->");
+		System.out.println("Введите строку ->");
 		startStr = in.nextLine() + " ";
-		System.out.print("Enter [K] position to revert [K] word:");
+		System.out.print("Введите позицию [K] для изменения [K] слова:");
 		k = Math.abs(in.nextInt());
 		in.close();
 		for (int i = 0; i < startStr.length(); i++) {
@@ -34,6 +34,6 @@ public class Lab8_2 {
 			} else
 				result.append(c);
 		}
-		System.out.println("New stroke:\n" + result);
+		System.out.println("Новая строка :\n" + result);
 	}
 }

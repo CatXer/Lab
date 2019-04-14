@@ -4,22 +4,22 @@ import java.util.Scanner;
 
 public class Lab8_1 {
 	public static void main(String[] args) {
-		// init//
+		// инициализация //
 		Scanner in = new Scanner(System.in);
 		String newString;
 		char[] s;
-		// input//
-		System.out.println("Input any stroke:");
+		// ввод //
+		System.out.println("Введите строку :");
 		s = in.nextLine().toCharArray();
 		in.close();
-		// replace every five`s character to `F`//
+		// Каждый 5-й символ заменить на символ «F». //
 		for (int i = 0; i < s.length; i++)
 			if ((i + 1) % 5 == 0)
 				s[i] = 'F';
-		// convert char array to string//
+		// строка из миссива //
 		newString = new String(s);
-		// print new string//
-		System.out.println("Refactored stroke is:\n" + newString);
+		// вывод строки //
+		System.out.println("Новая строка :\n" + newString);
 
 	}
 }
