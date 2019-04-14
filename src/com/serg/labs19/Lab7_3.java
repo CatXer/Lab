@@ -1,6 +1,5 @@
 package com.serg.labs19;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Lab7_3 {
@@ -41,9 +40,13 @@ public class Lab7_3 {
 		// replacing upper triangle elements on sum//
 		for (int i = 0; i < matrix.length; i++) {
 			for (int j = i + 1; j < matrix.length; j++)
-					matrix[i][j] = sumEven;
+				matrix[i][j] = sumEven;
 		}
-		for(double [] c: matrix) 
-			System.out.println(Arrays.toString(c));
+		for (int row = 0; row < n; row++) {
+			System.out.print("| ");
+			for (double el : matrix[row])
+				System.out.printf("%10.6f  ", el);
+			System.out.println(" |");
+		}
 	}
 }

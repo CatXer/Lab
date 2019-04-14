@@ -26,10 +26,15 @@ public class Lab6_1 {
 		System.out.println("В массиве [" + count3 + "] элемента делятся на 3 без остатка.");
 
 		if (countNeg != 0) {
-			System.out.println("Были найдены отрицательные элементы ->");
-			for (double v : X)
-				if (v < 0)
-					System.out.print(v + " ");
+			System.out.print("Были найдены отрицательные элементы ->\n[");
+			for (double val : X)
+				if (val < 0)
+					if (--countNeg == 0) {
+						System.out.print(val + "]");
+						break;
+					} else
+						System.out.print(val + ", ");
+
 		} else
 			System.out.println("Отрицательных элементов не нашлось.");
 	}
