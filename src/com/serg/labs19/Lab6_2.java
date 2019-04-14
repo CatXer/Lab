@@ -28,18 +28,20 @@ public class Lab6_2 {
 		System.out.println("Вы ввели массив: " + Arrays.toString(Y) + ";\nВы ввели диапозон: [" + rangeDown + ":"
 				+ rangeUp + "];");
 		in.close();
+		
 		System.out.println("Среднее арифметическое нечётных элементов = " + Mid + ";");
+		//замена попавших в интервал 
 		for (int i = 0; i < n; i++) {
 			el = Y[i];
 			Y[i] = el >= rangeDown && el <= rangeUp ? Mid : el;
 		}
-		System.out.println("Элементы, принадлежащие иi+нтервалу [" + rangeDown + ":" + rangeUp
+		System.out.println("Элементы, принадлежащие интервалу [" + rangeDown + ":" + rangeUp
 				+ "], были заменены средним арифметическим [" + Mid + "] и массив принял вид:\n" + Arrays.toString(Y));
+		//удаление элементов с дробной частью
 		for (int i = 0; i < n; i++) {
 			el = Y[i];
 			if (el % 1 != 0)
 				continue;
-			
 			Y[newN++] = el;
 		}
 		System.out.print("Было удалено [" + (n-newN) + "] элементов с дробной частью и массив принял вид:\n[");
