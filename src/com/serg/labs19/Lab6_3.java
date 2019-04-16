@@ -7,8 +7,9 @@ public class Lab6_3 {
 	public static void main(String[] args) {
 		// initial//
 		Scanner in = new Scanner(System.in);
-		int zero_count = 0, m, k = 0;
+		int zero_count = 0, m, k = 0, i;
 		double[] X, Z;
+		double temp;
 
 		// ввод//
 		System.out.print("Введите длинну массива: ");
@@ -16,7 +17,7 @@ public class Lab6_3 {
 		Z = new double[m];
 		System.out.println("Запишите массив из " + m + " элементов:");
 
-		for (int i = 0; i < m; i++) {
+		for (i = 0; i < m; i++) {
 			System.out.print("Введите X" + (i + 1) + ":");
 			Z[i] = in.nextDouble();
 			if (Z[i] == 0)
@@ -29,13 +30,13 @@ public class Lab6_3 {
 		// Заполнение массива Xk//
 		X = new double[m - zero_count];
 
-		for (int i = 0; k < X.length && i < Z.length; i += 2) {
+		for (i = 0; i < Z.length; i += 2) {
 			double x = Z[i];
 			if (x == 0)
 				continue;
 			X[k++] = x;
 		}
-		for (int i = 1; k < X.length && i < Z.length; i += 2) {
+		for (i = 1; i < Z.length; i += 2) {
 			double x = Z[i];
 			if (x == 0)
 				continue;
@@ -43,15 +44,22 @@ public class Lab6_3 {
 		}
 
 		// Сортировка Шелла//
-		for (int gap = Z.length / 2; gap > 0; gap /= 2) {
-			for (int i = gap; i < Z.length; i++) {
-				double temp = Z[i];
-				for (k = i; k >= gap && Z[k - gap] < temp; k -= gap)
+		int gap = Z.length / 2;
+		while (gap > 0) {
+			i = gap;
+			while (i < Z.length) {
+				temp = Z[i];
+				k = i;
+				while (k >= gap && Z[k - gap] < temp) {
 					Z[k] = Z[k - gap];
+					k -= gap;
+				}
 				Z[k] = temp;
+				i++;
 			}
-		}
 
+			gap /= 2;
+		}
 		// Вывод результатов//
 
 		System.out.println(

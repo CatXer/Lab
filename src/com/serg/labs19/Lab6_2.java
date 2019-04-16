@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Lab6_2 {
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
-		int countOdd = 0, n = 0, newN = 0;;
+		int countOdd = 0, n = 0, newN = 0;
 		double Y[], rangeDown, rangeUp, el, Mid = 0;
 		System.out.print("Введите длинну массива: ");
 		n = Math.abs(in.nextInt());
@@ -28,26 +28,27 @@ public class Lab6_2 {
 		System.out.println("Вы ввели массив: " + Arrays.toString(Y) + ";\nВы ввели диапозон: [" + rangeDown + ":"
 				+ rangeUp + "];");
 		in.close();
-		
-		System.out.println("Среднее арифметическое нечётных элементов = " + Mid + ";");
-		//замена попавших в интервал 
+
+		System.out.println("Среднее арифметическое нечётных элементов = " + String.format("%.5f", Mid) + ";");
+		// замена попавших в интервал
 		for (int i = 0; i < n; i++) {
 			el = Y[i];
 			Y[i] = el >= rangeDown && el <= rangeUp ? Mid : el;
 		}
 		System.out.println("Элементы, принадлежащие интервалу [" + rangeDown + ":" + rangeUp
-				+ "], были заменены средним арифметическим [" + Mid + "] и массив принял вид:\n" + Arrays.toString(Y));
-		//удаление элементов с дробной частью
+				+ "], были заменены средним арифметическим [" + String.format("%.5f", Mid) + "] и массив принял вид:\n"
+				+ Arrays.toString(Y));
+		// удаление элементов с дробной частью
 		for (int i = 0; i < n; i++) {
 			el = Y[i];
 			if (el % 1 != 0)
 				continue;
 			Y[newN++] = el;
 		}
-		System.out.print("Было удалено [" + (n-newN) + "] элементов с дробной частью и массив принял вид:\n[");
-		for (int i = 0; i < newN-1; i++)
+		System.out.print("Было удалено [" + (n - newN) + "] элементов с дробной частью и массив принял вид:\n[");
+		for (int i = 0; i < newN - 1; i++)
 			System.out.print(Y[i] + ", ");
-		System.out.print(Y[newN-1] + "];");
+		System.out.print(Y[newN - 1] + "];");
 
 	}
 }
