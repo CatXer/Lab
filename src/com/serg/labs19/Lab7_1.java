@@ -7,6 +7,7 @@ public class Lab7_1 {
 		Scanner in = new Scanner(System.in);
 		int columns, rows;
 		double multyple;
+		boolean even = false;
 
 		System.out.print("Введите число строк [n]: ");
 		rows = Math.abs(in.nextInt());
@@ -29,7 +30,7 @@ public class Lab7_1 {
 		System.out.println("Вы ввели следующую матрицу :");
 
 		for (int row = 0; row < rows; row++) {
-			System.out.print("|");
+			System.out.print(row+1+": |");
 			for (double el : matrix[row])
 				System.out.printf("%10.4f ", el);
 			System.out.println(" |");
@@ -39,9 +40,12 @@ public class Lab7_1 {
 			multyple = 1;
 			for (double num : matrix[row])
 				multyple *= num;
-			if (multyple % 2 == 0)
+			if (multyple % 2 == 0) {
 				System.out.println(
 						"В строке [" + (row + 1) + "] произведение элементов = " + String.format("%.2f", multyple));
+				even = true;
+			}
 		}
+		if(!even) System.out.println("Строк с чётным произведением не найдено.");
 	}
 }

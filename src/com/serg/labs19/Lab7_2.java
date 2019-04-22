@@ -11,9 +11,9 @@ public class Lab7_2 {
 		int rows, columns;
 
 		System.out.print("Введите число строк [n]: ");
-		rows = in.nextInt();
+		rows =Math.abs(in.nextInt());
 		System.out.print("Введите число столбцов [m]: ");
-		columns = in.nextInt();
+		columns = Math.abs(in.nextInt());
 		if (columns == 0 || rows == 0) {
 			System.out.println("Ошибка: пустая матрица");
 			in.close();

@@ -31,16 +31,14 @@ public class Lab6_3 {
 		X = new double[m - zero_count];
 
 		for (i = 0; i < Z.length; i += 2) {
-			double x = Z[i];
-			if (x == 0)
+			if (Z[i] == 0)
 				continue;
-			X[k++] = x;
+			X[k++] = Z[i];
 		}
 		for (i = 1; i < Z.length; i += 2) {
-			double x = Z[i];
-			if (x == 0)
+			if (Z[i] == 0)
 				continue;
-			X[k++] = x;
+			X[k++] = Z[i];
 		}
 
 		// Сортировка Шелла//

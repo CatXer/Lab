@@ -20,25 +20,26 @@ public class Lab6_2 {
 				countOdd++;
 			}
 		}
-		Mid /= countOdd;
-		System.out.print("Введите нижнуюю границу диапозона: ");
-		rangeDown = in.nextDouble();
-		System.out.print("Введите верхнюю границу диапозона: ");
-		rangeUp = in.nextDouble();
-		System.out.println("Вы ввели массив: " + Arrays.toString(Y) + ";\nВы ввели диапозон: [" + rangeDown + ":"
-				+ rangeUp + "];");
-		in.close();
-
-		System.out.println("Среднее арифметическое нечётных элементов = " + String.format("%.5f", Mid) + ";");
-		// замена попавших в интервал
-		for (int i = 0; i < n; i++) {
-			el = Y[i];
-			Y[i] = el >= rangeDown && el <= rangeUp ? Mid : el;
+		System.out.println("Вы ввели массив: " + Arrays.toString(Y) + ";");
+		if (countOdd != 0) {
+			Mid /= countOdd;
+			System.out.print("Введите нижнуюю границу диапозона: ");
+			rangeDown = in.nextDouble();
+			System.out.print("Введите верхнюю границу диапозона: ");
+			rangeUp = in.nextDouble();
+			System.out.println("Вы ввели диапозон: [" + rangeDown + ":" + rangeUp + "];");
+			System.out.println("Среднее арифметическое нечётных элементов = " + String.format("%.5f", Mid) + ";");
+			// замена попавших в интервал
+			for (int i = 0; i < n; i++) {
+				el = Y[i];
+				Y[i] = el >= rangeDown && el <= rangeUp ? Mid : el;
+			}
+			System.out.println("Элементы, принадлежащие интервалу [" + rangeDown + ":" + rangeUp
+					+ "], были заменены средним арифметическим [" + String.format("%.5f", Mid)
+					+ "] и массив принял вид:\n" + Arrays.toString(Y));
+			// удаление элементов с дробной частью
 		}
-		System.out.println("Элементы, принадлежащие интервалу [" + rangeDown + ":" + rangeUp
-				+ "], были заменены средним арифметическим [" + String.format("%.5f", Mid) + "] и массив принял вид:\n"
-				+ Arrays.toString(Y));
-		// удаление элементов с дробной частью
+		in.close();
 		for (int i = 0; i < n; i++) {
 			el = Y[i];
 			if (el % 1 != 0)
@@ -46,9 +47,11 @@ public class Lab6_2 {
 			Y[newN++] = el;
 		}
 		System.out.print("Было удалено [" + (n - newN) + "] элементов с дробной частью и массив принял вид:\n[");
-		for (int i = 0; i < newN - 1; i++)
+
+		n = newN;
+		for (int i = 0; i < n - 1; i++)
 			System.out.print(Y[i] + ", ");
-		System.out.print(Y[newN - 1] + "];");
+		System.out.print(Y[n - 1] + "];");
 
 	}
 }
