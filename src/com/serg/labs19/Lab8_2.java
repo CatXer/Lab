@@ -20,7 +20,7 @@ public class Lab8_2 {
 			// 48 - 57 0 - 9
 
 			// if (("" + c).matches(".*[\\w\\p{InCyrillic}].*")) {
-			if (65 <= c && c <= 122 || 1040 <= c && c <= 1103 || 48 <= c && c <= 57) {
+			if (65 <= c && c <= 122 || 1040 <= c && c <= 1105 || 48 <= c && c <= 57) {
 				word += c;
 			} else if (word.length() > 0) {
 				if (++pos == k) {

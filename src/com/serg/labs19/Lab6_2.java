@@ -8,7 +8,7 @@ public class Lab6_2 {
 		Scanner in = new Scanner(System.in);
 		int countOdd = 0, n = 0, newN = 0;
 		double Y[], rangeDown, rangeUp, el, Mid = 0;
-		System.out.print("Введите длинну массива: ");
+		System.out.print("Введите длину массива: ");
 		n = Math.abs(in.nextInt());
 		Y = new double[n];
 		System.out.println("Запишите массив из " + n + " элементов:");

@@ -12,7 +12,7 @@ public class Lab6_3 {
 		double temp;
 
 		// ввод//
-		System.out.print("Введите длинну массива: ");
+		System.out.print("Введите длину массива: ");
 		m = Math.abs(in.nextInt());
 		Z = new double[m];
 		System.out.println("Запишите массив из " + m + " элементов:");

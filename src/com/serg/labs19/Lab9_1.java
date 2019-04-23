@@ -9,10 +9,10 @@ public class Lab9_1 {
 		Scanner in = new Scanner(System.in);
 		double X[];
 		int n, result;
-		System.out.print("Введите длинну массива X: ");
+		System.out.print("Введите длину массива X: ");
 		n = Math.abs(in.nextInt());
 		if (n != 0) {
-			System.out.println("Запишате массив X из ["+n+"] элементов:");
+			System.out.println("Запишате массив X из [" + n + "] элементов:");
 			X = new double[n];
 			for (int i = 0; i < n; i++) {
 				System.out.print("Введите X" + (i + 1) + ":");
@@ -25,7 +25,7 @@ public class Lab9_1 {
 			else
 				System.out.print("В массиве X не нашлось элементов, делящихся на 3 без остатка");
 		} else
-			System.out.print("Вы указали нулевую длинну.");
+			System.out.print("Вы указали нулевую длину.");
 		in.close();
 	}
 

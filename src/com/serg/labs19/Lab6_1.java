@@ -10,7 +10,7 @@ public class Lab6_1 {
 		int length, count3 = 0, countNeg = 0;
 		double[] X;
 		// input//
-		System.out.print("Введите длинну массива: ");
+		System.out.print("Введите длину массива: ");
 		length = Math.abs(in.nextInt());
 		X = new double[length];
 		System.out.println("Запишите массив из " + length + " элементов:");
