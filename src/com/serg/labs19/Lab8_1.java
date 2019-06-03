@@ -13,8 +13,7 @@ public class Lab8_1 {
 		s = in.nextLine().toCharArray();
 		in.close();
 		// Каждый 5-й символ заменить на символ «F». //
-		for (int i = 0; i < s.length; i++)
-			if ((i + 1) % 5 == 0)
+		for (int i = 4; i < s.length; i+=5)
 				s[i] = 'F';
 		// строка из миссива //
 		newString = new String(s);
